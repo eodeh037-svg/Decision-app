@@ -1,12 +1,11 @@
-import '../global.css';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
 import { Stack } from 'expo-router';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
-export default function Layout() {
+export default function RootLayout() {
   return (
-    <SafeAreaProvider>
-      <Stack />
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <Stack screenOptions={{ headerShown: false }} />
+    </Provider>
   );
 }
